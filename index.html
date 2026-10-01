@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>รายงานการตลาด 12 เดือน</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;500;600&family=IBM+Plex+Sans+Thai+Looped:wght@400;500;600&display=swap">
+<style>
+body{margin:0}
+/* Layout: a one-page briefing for a manager. Answer first, then where the money went, how each business is doing, and the trend. */
+:root {
+  --bg: #f4f6fa;
+  --surface: #ffffff;
+  --surface-2: #edf1f7;
+  --ink: #1b2a52;
+  --ink-2: #4a5677;
+  --muted: #6f7a94;
+  --line: #e0e5ee;
+  --line-strong: #c3ccdc;
+  --accent: #c03c76;
+  --focus: #15803d;
+  --good: #0ca30c;
+  --good-ink: #0a6b0a;
+  --good-bg: #e8f6e8;
+  --warn: #fab219;
+  --warn-ink: #8a5800;
+  --warn-bg: #fdf3dc;
+  --bad: #d03b3b;
+  --bad-ink: #a82727;
+  --bad-bg: #fbe9e9;
+  --none-bg: #eef0f4;
+  --total: #1b2a52;
+  --s-wellness: #2a78d6;
+  --s-nursing: #eb6834;
+  --s-dental: #1baf7a;
+  --s-smile: #eda100;
+  --s-vclinic: #e87ba4;
+  --font-display: "Anuphan", "Noto Sans Thai", "Leelawadee UI", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans Thai Looped", "Noto Sans Thai Looped", "Leelawadee UI", system-ui, sans-serif;
+  --radius: 16px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1322; --surface: #151b2d; --surface-2: #1d2539; --ink: #e9edf7; --ink-2: #b7c0d5; --muted: #8b95ad; --line: #262f48; --line-strong: #364261;
+    --accent: #ef78ab; --focus: #4ade80; --good-ink: #46d046; --good-bg: #16301c; --warn-ink: #fbbf3a; --warn-bg: #33290f; --bad-ink: #f28585; --bad-bg: #3a1a1d; --none-bg: #1d2539;
+    --total: #9db4ff; --s-wellness: #3987e5; --s-nursing: #d95926; --s-dental: #199e70; --s-smile: #c98500; --s-vclinic: #d55181; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1322; --surface: #151b2d; --surface-2: #1d2539; --ink: #e9edf7; --ink-2: #b7c0d5; --muted: #8b95ad; --line: #262f48; --line-strong: #364261;
+  --accent: #ef78ab; --focus: #4ade80; --good-ink: #46d046; --good-bg: #16301c; --warn-ink: #fbbf3a; --warn-bg: #33290f; --bad-ink: #f28585; --bad-bg: #3a1a1d; --none-bg: #1d2539;
+  --total: #9db4ff; --s-wellness: #3987e5; --s-nursing: #d95926; --s-dental: #199e70; --s-smile: #c98500; --s-vclinic: #d55181; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.65; }
+.wrap { max-width: 1040px; margin: 0 auto; padding-inline: 20px; padding-block: 32px 56px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 36px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.3; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(1.8rem, 4vw, 2.5rem); }
+h2 { font-size: 1.35rem; }
+h3 { font-size: 1.08rem; }
+p { margin: 0; }
+button { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 8px; }
+.num { font-variant-numeric: tabular-nums; }
+.sub { color: var(--ink-2); }
+.small { font-size: .9rem; }
+section { display: grid; gap: 14px; min-width: 0; }
+.sec-head { display: grid; gap: 2px; min-width: 0; }
+.top { display: grid; gap: 6px; }
+.top .eyebrow { font-family: var(--font-display); font-size: .85rem; font-weight: 500; letter-spacing: .1em; color: var(--accent); }
+
+.answer { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.tile { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: grid; gap: 4px; align-content: start; }
+.tile .q { font-size: .95rem; color: var(--ink-2); }
+.tile .a { font-family: var(--font-display); font-size: clamp(2rem, 4.6vw, 2.7rem); font-weight: 600; line-height: 1.15; }
+.tile .a small { font-size: .45em; font-weight: 500; color: var(--ink-2); margin-left: 4px; }
+.tile .e { font-size: .92rem; color: var(--ink-2); }
+.tile.unknown { background: var(--bad-bg); border-color: transparent; }
+.tile.unknown .a { color: var(--bad-ink); }
+.verdict { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: start; }
+.verdict .mark { width: 34px; height: 34px; border-radius: 50%; background: var(--ink); color: var(--surface); display: grid; place-items: center; font-family: var(--font-display); font-weight: 600; }
+.verdict p { font-size: 1.05rem; }
+.verdict b { font-weight: 600; }
+
+.bars { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px; display: grid; gap: 2px; }
+.bar-row { display: grid; grid-template-columns: minmax(180px, 330px) minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 10px 12px; border-radius: 10px; border: 0; background: none; text-align: left; cursor: pointer; width: 100%; }
+.bar-row:hover { background: var(--surface-2); }
+.bar-row[aria-pressed="true"] { background: var(--surface-2); box-shadow: inset 0 0 0 2px var(--ink); }
+.bar-row .name { display: flex; align-items: center; gap: 8px; font-weight: 500; min-width: 0; }
+.bar-row .track { height: 14px; background: var(--surface-2); border-radius: 0 7px 7px 0; overflow: hidden; }
+.bar-row[aria-pressed="true"] .track { background: var(--surface); }
+.bar-row .fill { display: block; height: 100%; border-radius: 0 7px 7px 0; }
+.bar-row .amt { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.bar-row .amt b { font-weight: 600; }
+.bar-row .amt span { color: var(--muted); font-size: .88rem; margin-left: 6px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+.hint { font-size: .88rem; color: var(--muted); }
+
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 14px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; display: grid; gap: 12px; text-align: left; cursor: pointer; align-content: start; }
+.card:hover { border-color: var(--line-strong); }
+.card[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--ink); border-color: var(--ink); }
+.card-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.card-top h3 { display: flex; align-items: center; gap: 8px; }
+.status { display: inline-flex; align-items: center; gap: 6px; font-size: .85rem; font-weight: 600; border-radius: 999px; padding: 3px 11px 3px 4px; white-space: nowrap; }
+.status i { width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; font-style: normal; color: #fff; font-size: .75rem; }
+.st-good { background: var(--good-bg); color: var(--good-ink); } .st-good i { background: var(--good); }
+.st-warn { background: var(--warn-bg); color: var(--warn-ink); } .st-warn i { background: var(--warn); color: #3b2a00; }
+.st-bad { background: var(--bad-bg); color: var(--bad-ink); } .st-bad i { background: var(--bad); }
+.st-none { background: var(--none-bg); color: var(--ink-2); } .st-none i { background: var(--muted); }
+.facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; border-top: 1px solid var(--line); padding-top: 12px; }
+.facts div { display: grid; min-width: 0; }
+.facts span { font-size: .78rem; color: var(--muted); line-height: 1.35; }
+.facts b { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+.facts .up { color: var(--good-ink); } .facts .down { color: var(--bad-ink); }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: grid; gap: 14px; min-width: 0; }
+.panel-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px 16px; }
+.seg { display: inline-flex; border: 1px solid var(--line-strong); border-radius: 999px; padding: 3px; background: var(--surface); max-width: 100%; overflow-x: auto; }
+.seg button { border: 0; background: none; border-radius: 999px; padding: 6px 14px; cursor: pointer; font-size: .92rem; white-space: nowrap; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--surface); font-weight: 600; }
+.chart svg { display: block; width: 100%; }
+.chart-note { font-size: .92rem; color: var(--ink-2); }
+.empty { border: 1px dashed var(--line-strong); border-radius: 12px; padding: 36px 18px; text-align: center; color: var(--ink-2); }
+
+.todo { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; counter-reset: t; }
+.todo li { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 4px 14px; counter-increment: t; }
+.todo li::before { content: counter(t); grid-row: span 3; width: 34px; height: 34px; border-radius: 50%; background: var(--surface-2); display: grid; place-items: center; font-family: var(--font-display); font-weight: 600; }
+.todo .why { color: var(--ink-2); }
+.todo .meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+.tag { font-size: .82rem; border-radius: 999px; padding: 2px 10px; background: var(--surface-2); color: var(--ink-2); white-space: nowrap; }
+.tag.when { background: var(--warn-bg); color: var(--warn-ink); font-weight: 600; }
+
+.know { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+.know ul { margin: 8px 0 0; padding-left: 1.2em; display: grid; gap: 6px; color: var(--ink-2); }
+footer { color: var(--muted); font-size: .85rem; display: grid; gap: 4px; }
+
+.bar-row .name { display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 8px; align-items: center; }
+.bar-row .name small { grid-column: 2; font-weight: 400; font-size: .82rem; color: var(--muted); line-height: 1.4; }
+.card ul { margin: 0; padding-left: 1.1em; display: grid; gap: 5px; color: var(--ink-2); font-size: .94rem; }
+.card ul b { color: var(--ink); font-weight: 600; }
+.card .lbl { font-size: .84rem; font-weight: 600; color: var(--ink); }
+.tile .x { font-size: .84rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 8px; margin-top: 6px; }
+.table-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .94rem; }
+th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 500; color: var(--ink-2); font-size: .86rem; background: var(--surface-2); }
+td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td .up { color: var(--good-ink); font-weight: 600; } td .down { color: var(--bad-ink); font-weight: 600; }
+.cmp-wrap { display: grid; gap: 8px; border-top: 1px solid var(--line); padding-top: 16px; }
+.camp-name { display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.more { justify-self: start; border: 1px solid var(--line-strong); background: var(--surface); border-radius: 999px; padding: 6px 14px; cursor: pointer; font-size: .9rem; }
+#tip { position: fixed; z-index: 20; pointer-events: none; background: var(--surface); color: var(--ink); border: 1px solid var(--line-strong); border-radius: 10px; padding: 10px 13px; font-size: .9rem; box-shadow: 0 10px 28px -12px rgba(15, 25, 50, .35); max-width: 260px; display: grid; gap: 3px; }
+#tip .t { font-weight: 600; }
+#tip .r { display: flex; justify-content: space-between; gap: 14px; color: var(--ink-2); }
+#tip .r b { color: var(--ink); font-variant-numeric: tabular-nums; }
+
+@media (max-width: 760px) {
+  .answer { grid-template-columns: minmax(0, 1fr); }
+  .bar-row { grid-template-columns: minmax(0, 1fr) auto; gap: 6px 10px; }
+  .bar-row .track { grid-column: 1 / -1; grid-row: 2; }
+}
+@media (max-width: 480px) {
+  .wrap { padding-inline: 16px; }
+  .facts { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">รายงานสำหรับผู้บริหาร</span>
+    <h1>การตลาดออนไลน์ 12 เดือน</h1>
+    <p class="sub">ต.ค. 2025 – ก.ย. 2026 · 4 ธุรกิจ · ตรวจเมื่อ 1 ต.ค. 2026</p>
+  </header>
+
+  <section aria-labelledby="h-answer">
+    <div class="sec-head"><h2 id="h-answer">ภาพรวมทั้งปี</h2><p class="hint">ตัวเลขรวม 12 เดือนของทั้ง 4 ธุรกิจครับ</p></div>
+    <div class="answer" id="answer"></div>
+  </section>
+
+  <section aria-labelledby="h-money">
+    <div class="sec-head">
+      <h2 id="h-money">งบโฆษณาแบ่งไปที่ธุรกิจใดบ้าง</h2>
+      <p class="hint">กดที่ชื่อธุรกิจเพื่อดูข้อมูลเฉพาะธุรกิจนั้นในกราฟด้านล่างได้ครับ</p>
+    </div>
+    <div class="bars" id="bars" role="group" aria-label="เลือกธุรกิจ"></div>
+  </section>
+
+  <section aria-labelledby="h-biz">
+    <div class="sec-head">
+      <h2 id="h-biz">ผลของแต่ละธุรกิจ</h2>
+      <p class="hint">“ผู้เข้าชมจากการค้นหา” หมายถึงผู้ที่ค้นหาใน Google แล้วกดเข้าเว็บไซต์เอง โดยไม่มีค่าโฆษณา ส่วน “เปลี่ยนแปลง” เป็นการเทียบ 3 เดือนล่าสุดกับ 3 เดือนแรกครับ</p>
+    </div>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section class="panel" aria-labelledby="h-trend">
+    <div class="panel-head">
+      <div class="sec-head">
+        <h2 id="h-trend">แนวโน้มรายเดือน</h2>
+        <p class="hint" id="trendWho"></p>
+      </div>
+      <div class="seg" id="metricSeg" role="group" aria-label="เลือกตัวเลข">
+        <button type="button" data-m="spend">เงินโฆษณา</button>
+        <button type="button" data-m="seo">ผู้เข้าชมจากการค้นหา</button>
+      </div>
+    </div>
+    <div class="chart" id="chart"></div>
+    <p class="chart-note" id="chartNote"></p>
+    <div class="cmp-wrap">
+      <h3 id="cmpTitle">เทียบช่วงต้นปีกับช่วงท้ายปี</h3>
+      <div class="table-wrap" id="cmp"></div>
+      <p class="hint" id="cmpNote"></p>
+    </div>
+  </section>
+
+  <section class="panel" aria-labelledby="h-camp">
+    <div class="panel-head">
+      <div class="sec-head">
+        <h2 id="h-camp">งบโฆษณาของแต่ละชุดโฆษณา</h2>
+        <p class="hint" id="campHint"></p>
+      </div>
+    </div>
+    <div class="table-wrap" id="camp"></div>
+    <button type="button" class="more" id="campMore" hidden></button>
+  </section>
+
+  <footer>
+    <span>ข้อมูลจากระบบโฆษณา Google 2 บัญชี และระบบวัดผลเว็บไซต์ของ Google ตรวจสอบแบบดูข้อมูลอย่างเดียว ไม่ได้แก้ไขโฆษณาหรือเว็บไซต์ครับ</span>
+    <span>รายละเอียดทั้งหมดอยู่ในไฟล์ Excel “Marketing-Audit-12-Months-TH” ครับ</span>
+  </footer>
+</div>
+<div id="tip" role="tooltip" hidden></div>
+
+<script>
+const D = {"months":["2025-10","2025-11","2025-12","2026-01","2026-02","2026-03","2026-04","2026-05","2026-06","2026-07","2026-08","2026-09"],"total_spend":1112539.68,"biz":[{"id":"wellness","name":"Flex Wellness / Flex Rehab","short":"Flex Wellness","domain":"flexwellnessclinic.com","ads":{"spend":[47097.59,56840.22,55378.0,55988.04,56724.29,56524.55,55818.6,54718.57,56550.55,55485.0,56040.31,56412.18],"clicks":[47565.0,77206.0,73693.0,106037.0,30666.0,30470.0,23411.0,20977.0,14908.0,12099.0,11988.0,10386.0],"impr":[2364173.0,2698871.0,3597216.0,3034530.0,5753785.0,6075078.0,5267730.0,3322814.0,1339568.0,1278114.0,1132197.0,856970.0],"conv":[2833.3,2798.98,1603.58,2553.99,2815.01,2915.01,3146.96,2071.98,2671.0,3220.0,3199.0,2899.0]},"ads_total":{"spend":663577.86,"clicks":459406,"impr":36721046},"seo":{"clicks":[1365,1535,1510,1749,1064,1159,1120,1538,1686,2089,2329,2053],"impr":[51868,90178,81538,119106,38796,37857,41650,52060,55876,61896,60720,53340],"ctr":[2.63,1.7,1.85,1.47,2.74,3.06,2.69,2.95,3.02,3.38,3.84,3.85],"pos":[5.4,3.4,3.8,3.6,6.7,5.7,7.1,7.7,9.7,8.8,8.2,7.5]},"seo_total":{"clicks":19197,"impr":744885},"ga":[{"label":"GA4","prop":"404092213","vals":[4947,5267,3822,5118,4712,4706,4615,5081,4217,3989,3027,2710]}],"sessions_total":[{"label":"GA4","value":51128,"cover":"ต.ค. 2025 – ก.ย. 2026"}],"health":{"indexed":84,"not_indexed":96,"reasons":{"404":51,"redirect":30,"other_4xx":4,"alternate_canonical":3,"noindex":2,"crawled_not_indexed":6},"sitemap":90,"mobile":{"good":33,"needs_improvement":10,"poor":0},"mobile_issue":"LCP > 2.5s","manual":"No issues detected","security":"No issues detected","as_of":"2026-09-29"},"web":"own"},{"id":"nursing","name":"Flex Nursing Home","short":"Flex Nursing","domain":"flexnursinghome.com","ads":{"spend":[12436.8,12228.96,10775.09,12463.78,12403.76,12353.21,12455.72,12481.29,12489.25,12461.67,12451.3,12487.5],"clicks":[4572.0,9232.0,7771.0,6616.0,6391.0,5318.0,5141.0,4160.0,4149.0,3665.0,3854.0,3204.0],"impr":[117870.0,139645.0,108161.0,134595.0,139726.0,129510.0,120745.0,146778.0,141479.0,147347.0,126441.0,114249.0],"conv":[31.0,13.0,15.0,17.02,26.0,31.09,134.9,148.0,349.0,426.0,901.0,672.0]},"ads_total":{"spend":147488.31,"clicks":64073,"impr":1566546},"seo":{"clicks":[28,16,23,20,12,20,20,14,21,11,22,15],"impr":[717,720,720,1065,847,710,620,553,445,350,394,216],"ctr":[3.91,2.22,3.19,1.88,1.42,2.82,3.23,2.53,4.72,3.14,5.58,6.94],"pos":[11.1,9.9,9.5,16.4,18.5,8.6,8.0,8.2,6.8,7.8,8.4,3.2]},"seo_total":{"clicks":222,"impr":7357},"ga":[{"label":"ระบบเดิม","prop":"441543306","vals":[867,799,559,852,764,162,null,null,null,null,null,null]},{"label":"ระบบใหม่","prop":"527499420","vals":[null,null,null,null,null,134,146,166,184,174,242,205]}],"sessions_total":[{"label":"ระบบใหม่","value":1255,"cover":"มี.ค. – ก.ย. 2026"},{"label":"ระบบเดิม","value":3996,"cover":"ต.ค. 2025 – มี.ค. 2026"}],"health":{"indexed":6,"not_indexed":22,"reasons":{"404":9,"redirect":1,"discovered_not_indexed":12},"sitemap":18,"mobile":{"good":0,"needs_improvement":0,"poor":5},"mobile_issue":"LCP > 4s","manual":"No issues detected","security":"No issues detected","as_of":"2026-09-29"},"web":"own"},{"id":"dental","name":"Dental Plus","short":"Dental Plus","domain":"dentalplus-smileroom.com","ads":{"spend":[8722.35,8218.14,8231.9,8241.29,7587.04,6047.28,6386.88,6710.11,7626.53,6202.27,8246.26,8229.32],"clicks":[4868.0,4226.0,6411.0,7140.0,5378.0,2435.0,1936.0,3042.0,2402.0,563.0,731.0,716.0],"impr":[144069.0,108356.0,153369.0,193602.0,156620.0,66364.0,59416.0,76740.0,63879.0,28939.0,24027.0,21981.0],"conv":[5.0,1.0,0.0,0.0,82.0,196.0,199.0,189.0,205.0,156.0,260.0,230.0]},"ads_total":{"spend":90449.37,"clicks":39848,"impr":1097362},"web":"shared"},{"id":"smile","name":"Smile Room","short":"Smile Room","domain":"dentalplus-smileroom.com","ads":{"spend":[12651.8,12763.14,12699.53,12760.32,12576.47,10336.65,10783.5,11262.26,11094.86,10324.21,11458.87,11442.2],"clicks":[10193.0,9803.0,10696.0,13733.0,9662.0,2949.0,3247.0,4299.0,3054.0,2622.0,2566.0,2294.0],"impr":[331474.0,255172.0,295377.0,356011.0,271086.0,147087.0,194246.0,186854.0,184062.0,217436.0,174175.0,158088.0],"conv":[10.0,3.0,1.0,2.0,248.0,818.0,719.0,660.0,676.0,743.0,745.0,570.0]},"ads_total":{"spend":140153.79,"clicks":75118,"impr":2771068},"web":"shared"},{"id":"vclinic","name":"V Clinic","short":"V Clinic","domain":null,"ads":{"spend":[6065.06,6080.6,6080.68,6003.23,6060.05,6077.56,5827.38,6077.18,6073.41,6079.24,6077.83,4368.1],"clicks":[5519.0,5928.0,5528.0,8561.0,7567.0,7707.0,5593.0,1340.0,1315.0,1305.0,1267.0,826.0],"impr":[158829.0,132601.0,110989.0,162491.0,156911.0,171493.0,123743.0,66285.0,63816.0,70384.0,69349.0,53968.0],"conv":[3.0,2.0,1.0,0.0,0.0,9.0,178.0,407.0,453.0,426.0,414.0,207.0]},"ads_total":{"spend":70870.34,"clicks":52456,"impr":1340859},"web":"none"}],"shared":{"domain":"dentalplus-smileroom.com","seo":{"clicks":[342,435,411,454,391,553,612,626,739,667,622,547],"impr":[12189,10860,12271,14452,14486,16978,22920,22518,21722,20460,19593,17456],"ctr":[2.81,4.01,3.35,3.14,2.7,3.26,2.67,2.78,3.4,3.26,3.17,3.13],"pos":[6.3,6.8,6.4,7.0,6.7,5.6,4.9,5.4,5.0,5.1,4.9,4.9]},"ga":[{"label":"GA4","prop":"381529310","vals":[458,560,360,547,308,445,522,519,632,587,573,683]}],"seo_total":{"clicks":6399,"impr":205905},"sessions_total":[{"label":"GA4","value":6159,"cover":"ต.ค. 2025 – ก.ย. 2026"}],"health":{"indexed":20,"not_indexed":46,"reasons":{"404":7,"403":2,"noindex":1,"redirect":1,"crawled_not_indexed":35},"sitemap":31,"mobile":{"good":0,"needs_improvement":20,"poor":0},"mobile_issue":"LCP > 2.5s","manual":"No issues detected","security":"No issues detected","as_of":"2026-09-29"}},"campaigns":[{"acc":"928-226-7209","biz":"wellness","name":"Flex Rehab สาขา ที่เหลือ","type":"Performance Max","clicks":236338,"impr":20682769,"spend":183354.6,"conv":1677.0},{"acc":"928-226-7209","biz":"wellness","name":"Promotion 10 แถม 10 ลดปวด","type":"Search","clicks":14399,"impr":425100,"spend":89729.92,"conv":18360.81},{"acc":"928-226-7209","biz":"nursing","name":"Web traffic - Search - Nursing home","type":"Search","clicks":7895,"impr":188877,"spend":53967.7,"conv":68.55},{"acc":"928-226-7209","biz":"nursing","name":"Flex Nursing Home  traffic","type":"Search","clicks":11974,"impr":389785,"spend":53786.74,"conv":56.46},{"acc":"928-226-7209","biz":"nursing","name":"FlexNursinghome - Conversion","type":"Search","clicks":0,"impr":0,"spend":0.0,"conv":0.0},{"acc":"928-226-7209","biz":null,"name":"โปรโมชั่น 10 แถม 10 ทุกสาขา","type":"Search","clicks":0,"impr":0,"spend":0.0,"conv":0.0},{"acc":"928-226-7209","biz":"wellness","name":"Flex Wellness PRP stemcell","type":"Search","clicks":0,"impr":0,"spend":0.0,"conv":0.0},{"acc":"928-226-7209","biz":"wellness","name":"Flex web Rehab program","type":"Search","clicks":0,"impr":0,"spend":0.0,"conv":0.0},{"acc":"928-226-7209","biz":null,"name":"Campaign #1","type":"Performance Max","clicks":0,"impr":0,"spend":0.0,"conv":0.0},{"acc":"207-755-0088","biz":"wellness","name":"flex รัชดาสุทธิสาร","type":"Smart","clicks":14192,"impr":1590326,"spend":54521.77,"conv":1114.0},{"acc":"207-755-0088","biz":"wellness","name":"wellness CM 2","type":"Smart","clicks":6981,"impr":378794,"spend":49162.84,"conv":337.0},{"acc":"207-755-0088","biz":"dental","name":"DP SSK","type":"Smart","clicks":21219,"impr":627282,"spend":48884.54,"conv":1267.0},{"acc":"207-755-0088","biz":"smile","name":"SR รัชดา สุทธิสาร","type":"Smart","clicks":26082,"impr":1392232,"spend":43808.15,"conv":1240.0},{"acc":"207-755-0088","biz":"dental","name":"DP KTL","type":"Smart","clicks":18629,"impr":470080,"spend":41564.83,"conv":256.0},{"acc":"207-755-0088","biz":"nursing","name":"Nursing gg map","type":"Smart","clicks":44204,"impr":987884,"spend":39733.87,"conv":2639.0},{"acc":"207-755-0088","biz":"wellness","name":"flex รัชโยธิน","type":"Smart","clicks":11891,"impr":1834276,"spend":36464.37,"conv":549.0},{"acc":"207-755-0088","biz":"wellness","name":"Flex Charn","type":"Smart","clicks":14504,"impr":1237844,"spend":36450.13,"conv":911.0},{"acc":"207-755-0088","biz":"wellness","name":"Flex บางซ่อน","type":"Smart","clicks":26980,"impr":1446208,"spend":36441.48,"conv":576.0},{"acc":"207-755-0088","biz":"vclinic","name":"v clinicมีนบุรี","type":"Smart","clicks":21500,"impr":662028,"spend":36386.45,"conv":958.0},{"acc":"207-755-0088","biz":"wellness","name":"Wellness ภาวนา","type":"Smart","clicks":30936,"impr":1250819,"spend":36378.54,"conv":1009.0},{"acc":"207-755-0088","biz":"smile","name":"SR Maerim","type":"Smart","clicks":21824,"impr":537726,"spend":36304.14,"conv":2007.0},{"acc":"207-755-0088","biz":"smile","name":"ทำฟัน จัดฟัน รากเทียม","type":"Smart","clicks":21744,"impr":660566,"spend":36256.79,"conv":1872.0},{"acc":"207-755-0088","biz":"wellness","name":"Flex rehab ศรีสะเกษ","type":"Smart","clicks":20144,"impr":608714,"spend":35712.52,"conv":481.0},{"acc":"207-755-0088","biz":"wellness","name":"wellness CM trial","type":"Smart","clicks":15602,"impr":445780,"spend":35189.04,"conv":234.0},{"acc":"207-755-0088","biz":"wellness","name":"FlexWellness CM","type":"Performance Max","clicks":16792,"impr":5791418,"spend":35131.96,"conv":7478.0},{"acc":"207-755-0088","biz":"wellness","name":"flex บางเเค","type":"Smart","clicks":50647,"impr":1028998,"spend":35040.69,"conv":1.0},{"acc":"207-755-0088","biz":"vclinic","name":"V clinic แม่ริม","type":"Smart","clicks":30956,"impr":678831,"spend":34483.89,"conv":1142.0},{"acc":"207-755-0088","biz":"smile","name":"SR ubon","type":"Smart","clicks":5468,"impr":180544,"spend":23784.71,"conv":76.0},{"acc":"207-755-0088","biz":"wellness","name":"Wellness CM Local store visits and promotions-Performance Max-1","type":"Performance Max","clicks":0,"impr":0,"spend":0.0,"conv":0.0}],"accounts":[{"id":"928-226-7209","name":"Flex GG ads","spend":380838.96,"clicks":270606},{"id":"207-755-0088","name":"บัญชี Google Ads","spend":731700.72,"clicks":420295}]};
+const M = D.months;
+const TH_M = ['ม.ค.','ก.พ.','มี.ค.','เม.ย.','พ.ค.','มิ.ย.','ก.ค.','ส.ค.','ก.ย.','ต.ค.','พ.ย.','ธ.ค.'];
+const mName = (i, y) => { const [yy, mm] = M[i].split('-'); return TH_M[+mm - 1] + (y ? ' ' + yy : ''); };
+const ORDER = ['wellness', 'nursing', 'smile', 'dental'];
+const BIZ = Object.fromEntries(D.biz.map(b => [b.id, b]));
+const col = id => id === 'all' ? 'var(--total)' : `var(--s-${id})`;
+const nf = new Intl.NumberFormat('th-TH');
+const fInt = v => v == null ? '—' : nf.format(Math.round(v));
+const sum = a => a.reduce((x, y) => x + (y || 0), 0);
+const TOTAL = sum(ORDER.map(id => BIZ[id].ads_total.spend)), CLICKS = sum(ORDER.map(id => BIZ[id].ads_total.clicks));
+const seoOf = id => id === 'wellness' ? BIZ.wellness.seo : id === 'nursing' ? BIZ.nursing.seo : (id === 'dental' || id === 'smile') ? D.shared.seo : null;
+const seoTotalOf = id => id === 'wellness' || id === 'nursing' ? BIZ[id].seo_total.clicks : (id === 'dental' || id === 'smile') ? D.shared.seo_total.clicks : null;
+const change = seo => { const a = sum(seo.clicks.slice(0, 3)), b = sum(seo.clicks.slice(9)); return Math.round((b - a) / a * 100); };
+
+const DETAIL = {
+  wellness: [
+    ['เรื่องดี', 'ผู้เข้าชมจากการค้นหาเพิ่มขึ้นจาก <b>4,410 ครั้ง</b> (ต.ค.–ธ.ค. 2025) เป็น <b>6,471 ครั้ง</b> (ก.ค.–ก.ย. 2026) ครับ'],
+    ['เรื่องที่ต้องแก้', 'ระบบที่นับการกด LINE และ Facebook จากโฆษณา <b>หยุดทำงานตั้งแต่วันที่ 3 พ.ค. 2026</b> ทำให้ Google ปรับการแสดงโฆษณาจากข้อมูลที่ไม่ครบถ้วนครับ'],
+    ['เว็บไซต์', 'เปิดบนมือถือได้ค่อนข้างดี มี 10 หน้าที่ควรปรับให้เร็วขึ้นอีกครับ'],
+  ],
+  nursing: [
+    ['เรื่องที่น่าห่วง', 'ผู้เข้าชมจากการค้นหายังน้อยมาก ทั้งปีมีเพียง <b>222 ครั้ง</b> และช่วงท้ายปีลดลงจาก 67 เหลือ 48 ครั้งครับ'],
+    ['เว็บไซต์', '<b>เปิดช้าบนมือถือ</b> (เนื้อหาแสดงช้ากว่า 4 วินาที) มีลิงก์บทความที่ใช้งานไม่ได้ 3 ลิงก์ และอีก 12 หน้ายังไม่ปรากฏใน Google ครับ'],
+    ['ข้อสังเกต', 'มีการเปลี่ยนระบบนับผู้เข้าชมเว็บไซต์เมื่อ มี.ค. 2026 ตัวเลขก่อนและหลังจึงเทียบกันโดยตรงไม่ได้ครับ'],
+  ],
+  smile: [
+    ['เรื่องดี', 'ผู้เข้าชมจากการค้นหาเพิ่มขึ้นจาก <b>1,188</b> เป็น <b>1,836 ครั้ง</b> ต่อ 3 เดือน (นับรวมกับ Dental Plus เนื่องจากใช้เว็บไซต์เดียวกัน) ครับ'],
+    ['เรื่องที่ต้องแก้', 'Google แจ้งให้ <b>เชื่อมต่อหมุดร้านบน Google Maps ใหม่</b> หากยังไม่ดำเนินการ การนับการโทรและการขอเส้นทางของแต่ละสาขาจะคลาดเคลื่อนครับ'],
+    ['เว็บไซต์', 'บนมือถือมี 20 หน้าที่ควรปรับให้เร็วขึ้นครับ'],
+  ],
+  dental: [
+    ['เรื่องดี', 'ผู้เข้าชมจากการค้นหาเพิ่มขึ้นจาก <b>1,188</b> เป็น <b>1,836 ครั้ง</b> ต่อ 3 เดือน (นับรวมกับ Smile Room เนื่องจากใช้เว็บไซต์เดียวกัน) ครับ'],
+    ['เรื่องที่ต้องแก้', 'Google แจ้งให้ <b>เชื่อมหมุดร้านบน Google Maps ใหม่</b> ไม่อย่างนั้นการโทรและการขอเส้นทางของแต่ละสาขาจะนับผิด'],
+    ['เว็บไซต์', 'บนมือถือมี 20 หน้าที่ควรทำให้เร็วขึ้น'],
+  ],
+};
+const camps = id => D.campaigns.filter(c => c.biz === id && c.spend > 0).sort((a, b) => b.spend - a.spend);
+const STATUS = {
+  wellness: ['warn', '!', 'ต้องแก้', 'ใช้งบโฆษณามากที่สุด ผู้เข้าชมจากการค้นหาเพิ่มขึ้นดี แต่ระบบนับผลโฆษณาหยุดทำงานตั้งแต่เดือน พ.ค. 2026 ครับ'],
+  nursing: ['bad', '↓', 'น่าห่วง', 'ผู้เข้าชมจากการค้นหาลดลง เว็บไซต์เปิดช้าบนมือถือ และมีลิงก์ที่ใช้งานไม่ได้ครับ'],
+  smile: ['good', '↑', 'ดีขึ้น', 'ผู้เข้าชมจากการค้นหาเพิ่มขึ้นมาก (นับรวมกับ Dental Plus เนื่องจากใช้เว็บไซต์เดียวกัน) ครับ'],
+  dental: ['good', '↑', 'ดีขึ้น', 'ผู้เข้าชมจากการค้นหาเพิ่มขึ้นมาก (นับรวมกับ Smile Room เนื่องจากใช้เว็บไซต์เดียวกัน) ครับ'],
+};
+
+const S = { biz: 'all', metric: 'spend' };
+try { const v = localStorage.getItem('brief.biz'); if (v === 'all' || BIZ[v]) S.biz = v; } catch (e) {}
+const h = (tag, attrs, ...kids) => { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs || {})) { if (v == null) continue; if (k === 'class') e.className = v; else if (k === 'style') e.style.cssText = v; else if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v); } for (const c of kids.flat()) if (c != null && c !== false) e.append(c.nodeType ? c : document.createTextNode(String(c))); return e; };
+const sv = (tag, attrs) => { const e = document.createElementNS('http://www.w3.org/2000/svg', tag); for (const [k, v] of Object.entries(attrs || {})) e.setAttribute(k, v); return e; };
+function setBiz(id) { S.biz = id; try { localStorage.setItem('brief.biz', id); } catch (e) {} render(); }
+const pick = id => setBiz(S.biz === id ? 'all' : id);
+
+function renderBars() {
+  const max = Math.max(...ORDER.map(id => BIZ[id].ads_total.spend));
+  const allBtn = h('button', { type: 'button', class: 'bar-row', 'aria-pressed': String(S.biz === 'all'), onclick: () => setBiz('all') },
+    h('span', { class: 'name' }, h('span', { class: 'dot', style: 'background:var(--total)' }), 'รวมทั้งหมด', h('small', {}, `ผู้กดดูโฆษณา ${fInt(CLICKS)} ครั้ง · เฉลี่ยครั้งละ ${(TOTAL / CLICKS).toFixed(2)} บาท · โฆษณา ${sum(ORDER.map(i => camps(i).length))} ชุด`)), h('span', { class: 'track', style: 'background:none' }), h('span', { class: 'amt' }, h('b', {}, fInt(TOTAL) + ' บาท'), h('span', {}, '100%')));
+  document.getElementById('bars').replaceChildren(allBtn, ...ORDER.map(id => {
+    const b = BIZ[id], sp = b.ads_total.spend;
+    return h('button', { type: 'button', class: 'bar-row', 'aria-pressed': String(S.biz === id), onclick: () => pick(id) },
+      h('span', { class: 'name' }, h('span', { class: 'dot', style: `background:${col(id)}` }), b.name, h('small', {}, `ผู้กดดูโฆษณา ${fInt(b.ads_total.clicks)} ครั้ง · เฉลี่ยครั้งละ ${(sp / b.ads_total.clicks).toFixed(2)} บาท · โฆษณา ${camps(id).length} ชุด`)),
+      h('span', { class: 'track' }, h('span', { class: 'fill', style: `width:${sp / max * 100}%;background:${col(id)}` })),
+      h('span', { class: 'amt' }, h('b', {}, fInt(sp) + ' บาท'), h('span', {}, Math.round(sp / TOTAL * 100) + '%')));
+  }));
+}
+
+function renderCards() {
+  document.getElementById('cards').replaceChildren(...ORDER.map(id => {
+    const b = BIZ[id], [k, icon, label, say] = STATUS[id], seo = seoOf(id), ch = seo ? change(seo) : null, tot = seoTotalOf(id);
+    return h('button', { type: 'button', class: 'card', 'aria-pressed': String(S.biz === id), onclick: () => pick(id) },
+      h('div', { class: 'card-top' }, h('h3', {}, h('span', { class: 'dot', style: `background:${col(id)}` }), b.short), h('span', { class: `status st-${k}` }, h('i', { 'aria-hidden': 'true' }, icon), label)),
+      h('p', {}, say),
+      h('ul', {}, ...DETAIL[id].map(([lbl, html]) => { const li = h('li', {}, h('span', { class: 'lbl' }, lbl + ': ')); const x = document.createElement('span'); x.innerHTML = html; li.append(x); return li; })),
+      h('div', { class: 'facts' },
+        h('div', {}, h('span', {}, 'งบโฆษณา (บาท)'), h('b', {}, fInt(b.ads_total.spend))),
+        h('div', {}, h('span', {}, 'ผู้เข้าชมจากการค้นหา ทั้งปี'), h('b', {}, tot == null ? 'ยังไม่มีข้อมูล' : fInt(tot))),
+        h('div', {}, h('span', {}, 'ผู้เข้าชมจากการค้นหา เปลี่ยนแปลง'), ch == null ? h('b', {}, 'ยังไม่มีข้อมูล') : h('b', { class: ch >= 0 ? 'up' : 'down' }, (ch >= 0 ? '▲ +' : '▼ ') + ch + '%'))));
+  }));
+}
+
+const tip = document.getElementById('tip');
+function showTip(x, y, title, rows) {
+  tip.replaceChildren(h('div', { class: 't' }, title), ...rows.map(([a, b]) => h('div', { class: 'r' }, h('span', {}, a), h('b', {}, b))));
+  tip.hidden = false;
+  const w = tip.offsetWidth, ht = tip.offsetHeight, vw = document.documentElement.clientWidth;
+  let l = x + 14, t = y - ht - 12; if (l + w > vw - 8) l = x - w - 14; if (t < 8) t = y + 16;
+  tip.style.left = Math.max(8, l) + 'px'; tip.style.top = t + 'px';
+}
+
+function series() {
+  if (S.metric === 'spend') {
+    if (S.biz === 'all') return { vals: M.map((_, i) => sum(ORDER.map(id => BIZ[id].ads.spend[i]))), parts: i => ORDER.map(id => [BIZ[id].short, fInt(BIZ[id].ads.spend[i]) + ' บาท']), unit: 'บาท' };
+    return { vals: BIZ[S.biz].ads.spend, unit: 'บาท' };
+  }
+  if (S.biz === 'all') { const s3 = [BIZ.wellness.seo, BIZ.nursing.seo, D.shared.seo]; return { vals: M.map((_, i) => sum(s3.map(s => s.clicks[i]))), parts: i => [['Flex Wellness', fInt(s3[0].clicks[i])], ['Flex Nursing', fInt(s3[1].clicks[i])], ['Dental Plus + Smile Room', fInt(s3[2].clicks[i])]], unit: 'ครั้ง' }; }
+  const seo = seoOf(S.biz); return seo ? { vals: seo.clicks, unit: 'ครั้ง' } : null;
+}
+function niceMax(v) { const p = Math.pow(10, Math.floor(Math.log10(v))), f = v / p; return [1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10].find(x => f <= x + 1e-9) * p; }
+
+function renderTrend() {
+  document.querySelectorAll('#metricSeg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.m === S.metric)));
+  const who = S.biz === 'all' ? 'ทั้ง 4 ธุรกิจรวมกัน' : BIZ[S.biz].name;
+  document.getElementById('trendWho').textContent = 'กำลังแสดง: ' + who + (S.biz !== 'all' ? ' · กดชื่อเดิมอีกครั้งเพื่อกลับไปดูทั้งหมดได้ครับ' : '');
+  const host = document.getElementById('chart'), note = document.getElementById('chartNote');
+  const s = series();
+  if (!s) { host.replaceChildren(h('div', { class: 'empty' }, h('b', {}, 'ยังไม่มีข้อมูล'), h('p', { class: 'small' }, 'ธุรกิจนี้ยังไม่มีข้อมูลผู้เข้าชมจากการค้นหาครับ'))); note.textContent = ''; return; }
+  const W = Math.max(300, host.clientWidth || 640), narrow = W < 540, H = narrow ? 240 : 290, m = { l: narrow ? 48 : 60, r: 8, t: 30, b: 46 };
+  const iw = W - m.l - m.r, ih = H - m.t - m.b, band = iw / 12, max = niceMax(Math.max(...s.vals));
+  const y = v => m.t + ih - v / max * ih, color = col(S.biz);
+  const svg = sv('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H, role: 'img', 'aria-label': `${S.metric === 'spend' ? 'งบโฆษณา' : 'ผู้เข้าชมจากการค้นหา'} รายเดือน ${who}` });
+  for (let k = 0; k <= 4; k++) {
+    const v = max / 4 * k, yy = y(v);
+    svg.append(sv('line', { x1: m.l, x2: m.l + iw, y1: yy, y2: yy, stroke: k ? 'var(--line)' : 'var(--line-strong)', 'shape-rendering': 'crispEdges' }));
+    const t = sv('text', { x: m.l - 8, y: yy + 4, 'text-anchor': 'end', 'font-size': 11.5, fill: 'var(--muted)', 'font-family': 'var(--font-body)' }); t.textContent = nf.format(Math.round(v)); svg.append(t);
+  }
+  let hiI = 0; s.vals.forEach((v, i) => { if (v > s.vals[hiI]) hiI = i; });
+  s.vals.forEach((v, i) => {
+    const bw = Math.min(30, band * .6), x = m.l + band * i + (band - bw) / 2, top = y(v), hh = m.t + ih - top, r = Math.min(5, bw / 2, hh);
+    const bar = sv('path', { d: `M${x},${top + hh}V${top + r}Q${x},${top} ${x + r},${top}H${x + bw - r}Q${x + bw},${top} ${x + bw},${top + r}V${top + hh}Z`, fill: color });
+    svg.append(bar);
+    if (i === hiI || i === 11) { const t = sv('text', { x: x + bw / 2, y: top - 8, 'text-anchor': 'middle', 'font-size': 12, 'font-weight': 600, fill: 'var(--ink)', 'font-family': 'var(--font-body)' }); t.textContent = nf.format(Math.round(v)); svg.append(t); }
+    if (!narrow || i % 2 === 0 || i === 11) { const t = sv('text', { x: x + bw / 2, y: m.t + ih + 19, 'text-anchor': 'middle', 'font-size': 12, fill: 'var(--ink-2)', 'font-family': 'var(--font-body)' }); t.textContent = mName(i); svg.append(t); }
+    if (i === 0 || M[i].endsWith('-01')) { const t = sv('text', { x: x + bw / 2, y: m.t + ih + 36, 'text-anchor': 'middle', 'font-size': 11, fill: 'var(--muted)', 'font-family': 'var(--font-body)' }); t.textContent = M[i].slice(0, 4); svg.append(t); }
+    const hit = sv('rect', { x: m.l + band * i, y: m.t, width: band, height: ih, fill: 'transparent', tabindex: 0, 'aria-label': `${mName(i, true)} ${nf.format(Math.round(v))} ${s.unit}` });
+    const on = (cx, cy) => { bar.setAttribute('opacity', .75); showTip(cx, cy, mName(i, true), [['รวม', nf.format(Math.round(v)) + ' ' + s.unit], ...(s.parts ? s.parts(i) : [])]); };
+    const off = () => { bar.setAttribute('opacity', 1); tip.hidden = true; };
+    hit.addEventListener('pointermove', e => on(e.clientX, e.clientY)); hit.addEventListener('pointerleave', off);
+    hit.addEventListener('focus', () => { const bb = hit.getBoundingClientRect(); on(bb.left + bb.width / 2, bb.top + 40); }); hit.addEventListener('blur', off);
+    svg.append(hit);
+  });
+  host.replaceChildren(svg);
+  const avg = sum(s.vals) / 12;
+  note.textContent = S.metric === 'spend'
+    ? `ใช้งบเฉลี่ยเดือนละ ${fInt(avg)} บาท เดือนที่ใช้มากที่สุดคือ ${mName(hiI, true)} (${fInt(s.vals[hiI])} บาท) สามารถชี้หรือกดที่แท่งเพื่อดูตัวเลขแต่ละเดือนได้ครับ`
+    : `เฉลี่ยเดือนละ ${fInt(avg)} ครั้ง เดือนที่สูงที่สุดคือ ${mName(hiI, true)} (${fInt(s.vals[hiI])} ครั้ง) ทั้งนี้ตัวเลขเดือน ก.ย. 2026 อาจยังเปลี่ยนแปลงเล็กน้อยครับ`;
+}
+
+function renderAnswerTiles() {
+  const impr = sum(ORDER.map(id => BIZ[id].ads_total.impr));
+  const s3 = [BIZ.wellness.seo, BIZ.nursing.seo, D.shared.seo];
+  const seoTot = BIZ.wellness.seo_total.clicks + BIZ.nursing.seo_total.clicks + D.shared.seo_total.clicks;
+  const q1 = sum(s3.map(s => sum(s.clicks.slice(0, 3)))), q4 = sum(s3.map(s => sum(s.clicks.slice(9))));
+  const tile = (q, a, unit, e, x) => h('div', { class: 'tile' }, h('span', { class: 'q' }, q), h('span', { class: 'a num' }, a, h('small', {}, unit)), h('span', { class: 'e' }, e), x ? h('span', { class: 'x' }, x) : null);
+  document.getElementById('answer').replaceChildren(
+    tile('งบโฆษณาบน Google ที่ใช้ไป', (TOTAL / 1e6).toFixed(2), 'ล้านบาท', 'เฉลี่ยเดือนละประมาณ ' + fInt(Math.round(TOTAL / 12 / 100) * 100) + ' บาท', 'ใช้จาก 2 บัญชีโฆษณา โดย Flex Wellness ใช้มากที่สุด ' + Math.round(BIZ.wellness.ads_total.spend / TOTAL * 100) + '%'),
+    tile('จำนวนครั้งที่โฆษณาแสดง', (impr / 1e6).toFixed(1), 'ล้านครั้ง', 'นับทุกครั้งที่โฆษณาแสดงบนหน้าจอ ไม่ว่าผู้ชมจะกดหรือไม่ครับ', 'แสดงบน Google ค้นหา, Google Maps, YouTube และเว็บไซต์อื่นที่ Google เลือกให้ครับ'),
+    tile('จำนวนครั้งที่มีผู้กดดูโฆษณา', fInt(CLICKS), 'ครั้ง', 'ค่าใช้จ่ายเฉลี่ยครั้งละ ' + (TOTAL / CLICKS).toFixed(2) + ' บาท', 'ผู้ชมหนึ่งคนอาจกดหลายครั้ง และการกดดูยังไม่ได้หมายถึงการเป็นลูกค้าครับ'),
+    tile('ผู้เข้าชมเว็บไซต์จากการค้นหา (ไม่มีค่าโฆษณา)', fInt(seoTot), 'ครั้ง', '3 เดือนล่าสุดเพิ่มขึ้น ' + Math.round((q4 - q1) / q1 * 100) + '% เทียบกับ 3 เดือนแรกครับ', 'ผู้ที่ค้นหาใน Google แล้วกดเข้าเว็บไซต์เอง รวม 3 เว็บไซต์ครับ'));
+}
+function pctCell(a, b) { if (!a) return h('td', { class: 'r' }, '—'); const p = Math.round((b - a) / a * 100); return h('td', { class: 'r' }, h('span', { class: p >= 0 ? 'up' : 'down' }, (p >= 0 ? '▲ +' : '▼ ') + p + '%')); }
+function renderCompare() {
+  const ids = S.biz === 'all' ? ORDER : [S.biz];
+  const q = (arrs, a, b) => sum(arrs.map(x => sum(x.slice(a, b))));
+  const sp = ids.map(id => BIZ[id].ads.spend), cl = ids.map(id => BIZ[id].ads.clicks);
+  const se = (S.biz === 'all' ? [BIZ.wellness.seo, BIZ.nursing.seo, D.shared.seo] : [seoOf(S.biz)]).map(s => s.clicks);
+  const rows = [
+    ['งบโฆษณา (บาท)', q(sp, 0, 3), q(sp, 9, 12)],
+    ['ผู้กดดูโฆษณา (ครั้ง)', q(cl, 0, 3), q(cl, 9, 12)],
+    ['ค่าใช้จ่ายเฉลี่ยต่อการกดหนึ่งครั้ง (บาท)', q(sp, 0, 3) / q(cl, 0, 3), q(sp, 9, 12) / q(cl, 9, 12), true],
+    ['ผู้เข้าชมจากการค้นหา (ครั้ง)' + (S.biz === 'dental' || S.biz === 'smile' ? ' · เว็บร่วม' : ''), q(se, 0, 3), q(se, 9, 12)],
+  ];
+  const fmt = (v, dec) => dec ? v.toFixed(2) : fInt(v);
+  document.getElementById('cmp').replaceChildren(h('table', {}, h('thead', {}, h('tr', {}, h('th', {}, ''), h('th', { class: 'r' }, 'ต.ค.–ธ.ค. 2025'), h('th', { class: 'r' }, 'ก.ค.–ก.ย. 2026'), h('th', { class: 'r' }, 'เปลี่ยนแปลง'))),
+    h('tbody', {}, ...rows.map(([lab, a, b, dec]) => h('tr', {}, h('td', {}, lab), h('td', { class: 'r' }, fmt(a, dec)), h('td', { class: 'r' }, fmt(b, dec)),
+      dec ? h('td', { class: 'r' }, h('span', { class: b > a ? 'down' : 'up' }, (b > a ? 'สูงขึ้น ' : 'ลดลง ') + Math.abs(Math.round((b - a) / a * 100)) + '%')) : pctCell(a, b))))));
+  document.getElementById('cmpTitle').textContent = 'เทียบ 3 เดือนแรกกับ 3 เดือนล่าสุด · ' + (S.biz === 'all' ? 'ทั้ง 4 ธุรกิจ' : BIZ[S.biz].short);
+  const ca = q(cl, 0, 3), cb = q(cl, 9, 12), sa = q(sp, 0, 3), sb = q(sp, 9, 12);
+  document.getElementById('cmpNote').textContent = cb < ca * 0.7 && sb > sa * 0.85
+    ? 'ช่วงท้ายปีใช้งบโฆษณาใกล้เคียงกับช่วงต้นปี แต่จำนวนผู้กดดูโฆษณาลดลงมาก ค่าใช้จ่ายต่อการกดแต่ละครั้งจึงสูงขึ้นครับ'
+    : 'ตัวเลขเดือน ก.ย. 2026 อาจยังเปลี่ยนแปลงเล็กน้อยครับ';
+}
+const S2 = { more: false };
+function renderCampaigns() {
+  const ids = S.biz === 'all' ? ORDER : [S.biz];
+  const list = ids.flatMap(id => camps(id)).sort((a, b) => b.spend - a.spend);
+  const limit = S.biz === 'all' && !S2.more ? 8 : list.length;
+  document.getElementById('campHint').textContent = (S.biz === 'all' ? 'ทั้ง 4 ธุรกิจ' : BIZ[S.biz].short) + ` · มีโฆษณาที่ใช้งบ ${list.length} ชุด เรียงจากใช้งบมากที่สุด ชื่อชุดเป็นไปตามที่ตั้งไว้ในระบบ Google ครับ`;
+  document.getElementById('camp').replaceChildren(h('table', {}, h('thead', {}, h('tr', {}, h('th', {}, 'ชื่อชุดโฆษณา'), h('th', {}, 'ธุรกิจ'), h('th', { class: 'r' }, 'งบที่ใช้ (บาท)'), h('th', { class: 'r' }, 'ผู้กดดู (ครั้ง)'), h('th', { class: 'r' }, 'เฉลี่ยครั้งละ (บาท)'))),
+    h('tbody', {}, ...list.slice(0, limit).map(c => h('tr', {},
+      h('td', {}, c.name), h('td', {}, h('span', { class: 'camp-name' }, h('span', { class: 'dot', style: `background:${col(c.biz)}` }), BIZ[c.biz].short)),
+      h('td', { class: 'r' }, fInt(c.spend)), h('td', { class: 'r' }, fInt(c.clicks)), h('td', { class: 'r' }, (c.spend / c.clicks).toFixed(2)))))));
+  const more = document.getElementById('campMore');
+  more.hidden = !(S.biz === 'all' && list.length > 8);
+  more.textContent = S2.more ? 'แสดงน้อยลง' : `ดูทั้งหมด ${list.length} ชุด`;
+}
+document.getElementById('campMore').addEventListener('click', () => { S2.more = !S2.more; renderCampaigns(); });
+function render() { renderBars(); renderCards(); renderTrend(); renderCompare(); renderCampaigns(); }
+document.getElementById('metricSeg').addEventListener('click', e => { const b = e.target.closest('button'); if (b) { S.metric = b.dataset.m; renderTrend(); } });
+let rz; window.addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(renderTrend, 120); });
+window.addEventListener('scroll', () => { tip.hidden = true; }, { passive: true });
+renderAnswerTiles(); render();
+</script>
+
+</body>
+</html>
